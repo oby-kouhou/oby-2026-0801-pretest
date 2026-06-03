@@ -1,0 +1,306 @@
+/* =========================================================================
+   小林聖心女子学院 — Colors & Type Tokens
+   OBAYASHI Sacred Heart School (小学校・中学校・高等学校)
+   -------------------------------------------------------------------------
+   Grounded in the school's actual visual identity:
+   - PRIMARY  : Deep navy (制服カラー・校章色) — the institutional anchor
+   - NEUTRALS : Warm ivory / cream — brochure paper base
+   - ACCENTS  : Peach / Mint / Lavender / Coral — the "少しだけ攻めた" palette
+                from the 2023 renewal brochure, used to break the
+                traditionally-stiff navy-only image. Each color also
+                codes one of the three Stages:
+                  Stage I  (1–4年)  → Peach / Coral
+                  Stage II (5–8年)  → Mint / Teal
+                  Stage III(9–12年) → Lavender / Dusty purple
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ---------------------------------------------------------------------
+     CORE — Navy (primary) + Ivory (neutral base)
+     --------------------------------------------------------------------- */
+  --sh-navy:         #1F3352;   /* primary — 制服の紺 */
+  --sh-navy-deep:    #14213D;   /* pressed / heading ink */
+  --sh-navy-soft:    #3D5278;   /* secondary text */
+  --sh-navy-tint:    #E5EAF2;   /* pale navy wash */
+
+  /* Warm ivory / cream — brochure paper */
+  --sh-ivory:        #F7F1E4;   /* page background */
+  --sh-paper:        #FBF7EC;   /* card surface */
+  --sh-paper-deep:   #EFE6D2;   /* inset band */
+  --sh-cream:        #F2E8D5;   /* warmer cream wash */
+  --sh-stone:        #D9CFB8;   /* divider on ivory */
+  --sh-stone-deep:   #9C907A;   /* muted metadata */
+
+  --sh-white:        #FFFFFF;
+  --sh-ink:          #1A1714;   /* near-black, warm undertone */
+  --sh-ink-soft:     #5A5148;
+
+  /* ---------------------------------------------------------------------
+     BROCHURE ACCENT PALETTE — "少しだけ攻めた" carefully-playful accents
+     Sampled directly from the 2023 renewal brochure. Muted pastels,
+     never fully saturated — they sit next to navy without fighting it.
+     --------------------------------------------------------------------- */
+
+  /* Peach / Coral — Stage I (1–4年生) */
+  --sh-peach:        #F4B89A;   /* Stage I band */
+  --sh-peach-soft:   #FBE1D2;   /* peach wash / bg */
+  --sh-coral:        #E87A5C;   /* coral accent / florals */
+  --sh-coral-deep:   #C4563F;
+
+  /* Mint / Teal — cover + Stage II (5–8年生) */
+  --sh-mint:         #9ED3CC;   /* cover teal */
+  --sh-mint-soft:    #D7EBE7;   /* mint wash / bg */
+  --sh-teal:         #5AA9A0;   /* deeper mint */
+  --sh-teal-deep:    #357A72;
+
+  /* Lavender / Dusty purple — Stage III (9–12年生) */
+  --sh-lavender:     #C9BEE0;   /* Stage III band */
+  --sh-lavender-soft:#ECE5F5;   /* lavender wash / bg */
+  --sh-violet:       #8B7AB0;   /* violet accent */
+  --sh-violet-deep:  #5F4F87;
+
+  /* Pink — used sparingly in campus map + club section */
+  --sh-pink:         #F5C7C9;
+  --sh-pink-soft:    #FAE3E4;
+  --sh-rose:         #D67A80;
+
+  /* Yellow/ochre — tiny accent in activity tags (washi-tape feel) */
+  --sh-sun:          #F2C94C;
+  --sh-sun-soft:     #FAE6A8;
+
+  /* Semantic — kept muted */
+  --sh-info:         var(--sh-teal);
+  --sh-success:      #5C8A6B;
+  --sh-warning:      #C89A3C;
+  --sh-error:        #B24A3A;
+
+  /* ---------------------------------------------------------------------
+     SEMANTIC ROLES
+     --------------------------------------------------------------------- */
+  --bg:              var(--sh-ivory);
+  --bg-surface:      var(--sh-paper);
+  --bg-inset:        var(--sh-paper-deep);
+  --bg-dark:         var(--sh-navy-deep);
+
+  --fg:              var(--sh-ink);
+  --fg-soft:         var(--sh-ink-soft);
+  --fg-muted:        var(--sh-stone-deep);
+  --fg-on-dark:      var(--sh-ivory);
+
+  --accent:          var(--sh-navy);
+  --accent-hover:    var(--sh-navy-soft);
+  --accent-press:    var(--sh-navy-deep);
+
+  --border:          var(--sh-stone);
+  --border-soft:     #E6DCC5;
+  --border-strong:   var(--sh-stone-deep);
+
+  /* Stage tokens — use these when theming Stage-specific sections */
+  --stage-1:         var(--sh-peach);
+  --stage-1-soft:    var(--sh-peach-soft);
+  --stage-1-ink:     var(--sh-coral-deep);
+
+  --stage-2:         var(--sh-mint);
+  --stage-2-soft:    var(--sh-mint-soft);
+  --stage-2-ink:     var(--sh-teal-deep);
+
+  --stage-3:         var(--sh-lavender);
+  --stage-3-soft:    var(--sh-lavender-soft);
+  --stage-3-ink:     var(--sh-violet-deep);
+
+  /* Legacy aliases for generic naming */
+  --fg1: var(--fg);  --fg2: var(--fg-soft);  --fg3: var(--fg-muted);
+  --bg1: var(--bg);  --bg2: var(--bg-surface); --bg3: var(--bg-inset);
+
+  /* ---------------------------------------------------------------------
+     TYPOGRAPHY
+     -------------------------------------------------------------------
+     Brochure + website use Hiragino Mincho for display Japanese and
+     Hiragino Kaku Gothic for body. For portability we fall through to
+     Noto Serif JP / Noto Sans JP. Cormorant Garamond is the Latin
+     display face (used for "OBAYASHI", "Stage I/II/III", "Big You,
+     small i" on the cover).
+     --------------------------------------------------------------------- */
+  --font-serif-jp: "Hiragino Mincho ProN", "Hiragino Mincho Pro",
+                   "YuMincho", "Yu Mincho", "Noto Serif JP",
+                   "游明朝", serif;
+  --font-sans-jp:  "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro",
+                   "YuGothic", "Yu Gothic", "Noto Sans JP",
+                   "游ゴシック", sans-serif;
+  --font-serif-en: "Cormorant Garamond", "Adobe Garamond Pro", Garamond,
+                   "Times New Roman", serif;
+  --font-display:  var(--font-serif-jp);
+  --font-body:     var(--font-sans-jp);
+  --font-mono:     ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  --fs-hero:   clamp(40px, 5.5vw, 72px);
+  --fs-h1:     clamp(30px, 3.2vw, 44px);
+  --fs-h2:     clamp(24px, 2.4vw, 32px);
+  --fs-h3:     20px;
+  --fs-h4:     17px;
+  --fs-body:   16px;
+  --fs-small:  14px;
+  --fs-caption:12px;
+
+  --lh-tight:    1.25;
+  --lh-display:  1.6;
+  --lh-body:     1.9;
+  --lh-tightest: 1.1;
+
+  --ls-display: 0.05em;
+  --ls-body:    0.02em;
+  --ls-caps:    0.18em;
+
+  /* ---------------------------------------------------------------------
+     SPACING / RADII / SHADOWS
+     --------------------------------------------------------------------- */
+  --sp-1: 4px;   --sp-2: 8px;   --sp-3: 12px;  --sp-4: 16px;
+  --sp-5: 24px;  --sp-6: 32px;  --sp-7: 48px;  --sp-8: 64px;  --sp-9: 96px;
+
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;      /* rarely used; brochure rounds photo corners mildly */
+  --radius-pill: 999px;
+
+  --shadow-1: 0 1px 2px rgba(20, 33, 61, 0.05),
+              0 1px 1px rgba(20, 33, 61, 0.03);
+  --shadow-2: 0 4px 12px rgba(20, 33, 61, 0.07),
+              0 1px 2px rgba(20, 33, 61, 0.04);
+  --shadow-3: 0 12px 28px rgba(20, 33, 61, 0.10),
+              0 2px 6px rgba(20, 33, 61, 0.05);
+  --shadow-inset: inset 0 0 0 1px var(--border-soft);
+
+  --rule-ink:  1px solid var(--border);
+  --rule-navy: 1px solid var(--sh-navy);
+}
+
+/* =========================================================================
+   SEMANTIC ELEMENT STYLES
+   ========================================================================= */
+
+.sh-body {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body);
+  color: var(--fg);
+  background: var(--bg);
+}
+
+.sh-h1, .sh-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  color: var(--sh-navy-deep);
+}
+
+.sh-hero {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-hero);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  color: var(--sh-navy-deep);
+}
+
+.sh-h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  color: var(--sh-navy-deep);
+}
+
+.sh-h3 {
+  font-family: var(--font-sans-jp);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-h3);
+  line-height: 1.5;
+  letter-spacing: var(--ls-body);
+  color: var(--fg);
+}
+
+.sh-eyebrow {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--sh-navy);
+}
+
+.sh-caption, .sh-meta {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  line-height: 1.5;
+  letter-spacing: var(--ls-body);
+  color: var(--fg-muted);
+}
+
+.sh-p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg);
+}
+
+.sh-lede {
+  font-family: var(--font-serif-jp);
+  font-size: 18px;
+  line-height: 2.1;
+  letter-spacing: 0.04em;
+  color: var(--sh-navy);
+}
+
+.sh-quote {
+  font-family: var(--font-serif-jp);
+  font-weight: var(--fw-light);
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 2.2;
+  letter-spacing: 0.08em;
+  color: var(--sh-navy-deep);
+  text-align: center;
+}
+
+.sh-motto {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  color: var(--sh-navy);
+}
+
+.sh-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.2em;
+}
+
+/* Stage ribbon — brochure-style rounded tag */
+.sh-stage-tag {
+  display: inline-block;
+  padding: 6px 18px 6px 22px;
+  font-family: var(--font-sans-jp);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--sh-white);
+  border-radius: 0 999px 999px 0;
+}
+.sh-stage-tag[data-stage="1"] { background: var(--sh-peach); color: var(--sh-coral-deep); }
+.sh-stage-tag[data-stage="2"] { background: var(--sh-mint);  color: var(--sh-teal-deep); }
+.sh-stage-tag[data-stage="3"] { background: var(--sh-lavender); color: var(--sh-violet-deep); }
